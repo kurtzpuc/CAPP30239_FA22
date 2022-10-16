@@ -1,3 +1,10 @@
+### Information on homework.html and homework.js
+
+This code creates a webpage for reporting library visits in january 2022 across various branches in Chicago
+
+
+### Data for Final Project
+
 Data Sources: For FishCounts and Fishcounts (1), data on Nugashik river fish returns for sockeye salmon, I downloaded the data from Alaska's department of fish and game, located in Alaska. https://www.adfg.alaska.gov/sf/FishCounts/index.cfm?ADFG=main.displayResults
 
 For the data on sea conditions, I downloaded it from the EPA database. https://www.epa.gov/climate-indicators/oceans#:~:text=When%20averaged%20over%20all%20of,the%20land%20vary%20by%20region.
