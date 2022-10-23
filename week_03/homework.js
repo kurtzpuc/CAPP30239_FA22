@@ -1,64 +1,55 @@
-/* Bar chart of covid cases */
+/* Bar chart for COVID country cases */
 
 d3.csv("library_visits_jan22.csv").then(data => {
 
     for (let d of data) {
-        d.num = +d.num;
+        d.num = +d.num; //force a number
     };
 
     const height = 600,
-            width = 800,
-            margin = ({top:25, right:30, bottom:35, left:50})
-    
+          width = 800,
+          margin = ({ top: 25, right: 30, bottom: 35, left: 50 });
+
     let svg = d3.select("#chart")
-                .append("svg")
-                .attr("viewBox", [0, 0, width, height]);
+        .append("svg")
+        .attr("viewBox", [0, 0, width, height]); // for setting size in browser
     
-    const x = d3.scaleBand()
-                .domain(data.map(d => d.branch))
-                .range([margin.left, width - margin.right])
-                .padding(0.1);
+    let x = d3.scaleBand()
+        .domain(data.map(d => d.branch)) // maps data domain to library branches
+        .range([margin.left, width - margin.right]) // sets range to page size
+        .padding(0.1);
     
-    const y = d3.scaleLinear()
-                .domain([0, d3.max(data, d => d.num)]).nice()
-                .range([height - margin.bottom, margin.top]);
+    let y = d3.scaleLinear()
+        .domain([0, d3.max(data, d => d.num)]).nice() // top number rounded off max value of library visits
+        .range([height - margin.bottom, margin.top]); //origin is top left, so goes down
     
-    const xAxis = g => g
-            .attr("transform", `translate(0,${height - margin.bottom + 5})`)
-            .call(d3.axisBottom(x))
-            //.call(g => g.select(".domain").remove())
-
-    const yAxis = g => g
-            .attr("transform", `translate(${width - margin.left + 5},0)`)
-            .call(d3.axisLeft(y))
+    /* Update: simplfied axes */
+    svg.append("g")
+        .attr("transform", `translate(0,${height - margin.bottom + 5})`) //sets base of graph
+        .call(d3.axisBottom(x));
     
     svg.append("g")
-        .call(xAxis)
+        .attr("transform", `translate(${margin.left - 5},0)`) //sets y value
+        .call(d3.axisLeft(y));
 
-    svg.append("g")
-        .call(yAxis)
-    
-    let bar = svg.selectAll(".bar")
+    let bar = svg.selectAll(".bar") //create the bar class
         .append("g")
         .data(data)
         .join("g")
-        .attr("class","bar");
-    
-    bar.append("rect")
-        .attr("fill","steelblue")
-        .attr("x", d => x=(d.branch))
-        .attr("width", x.bandwith())
-        .attr("y", d => y(d.num))
-        .attr("height", d => y(0) - y(d.num));
-    
-    bar.append("text")
-        .text(d => d.num)
-        .attr('x', d => x(d.branch) + (x.bandwith()/2))
-        .attr("y", d => y(d.num) - 5)
-        .attr("text-anchor", "middle")
-        .style("fill","#000");
-        
-        
+        .attr("class", "bar");
 
-    console.log(data);
+    bar.append("rect")
+        .attr("fill", "steelblue")
+        .attr("x", d => x(d.branch)) // x position attribute for bar position
+        .attr("width", x.bandwidth())
+        .attr("y", d => y(d.num)) // y position attribute for bar position
+        .attr("height", d => y(0) - y(d.num));
+
+    bar.append('text') // add labels
+        .text(d => d.num)
+        .attr('x', d => x(d.branch) + (x.bandwidth()/2))
+        .attr('y', d => y(d.num) + 15) //set label position
+        .attr('text-anchor', 'middle')
+        .style('fill', 'white');
+
 });
