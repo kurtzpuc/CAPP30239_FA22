@@ -13,7 +13,7 @@ d3.csv('long-term-interest-canada.csv').then(data => {
 
     for (let d of data) {
         d.Value = +d.Value;
-        d.Month = timeParse(d.Month); // using timeParse function we created above
+        d.Month = timeParse(d.Month); // using timeParse function we created above, convert month value to just month
     }
 
     let x = d3.scaleTime()
@@ -26,10 +26,10 @@ d3.csv('long-term-interest-canada.csv').then(data => {
     
     svg.append("g")
       .attr("transform", `translate(${margin.left},0)`)
-      .attr("class", "y-axis") // adding a class to y-axis for scoping
+      .attr("class", "y-axis") // adding a class to y-axis
       .call(d3.axisLeft(y)
         .tickSizeOuter(0)
-        .tickFormat(d => d + "%") // format to include %
+        .tickFormat(d => d + "%") // format to include % on the y axis interest rate
         .tickSize(-width + margin.right + margin.left) // modified to meet at end of axis
       );
 
@@ -37,7 +37,7 @@ d3.csv('long-term-interest-canada.csv').then(data => {
       .attr("transform", `translate(0,${height - margin.bottom})`)
       .call(d3.axisBottom(x).tickSizeOuter(0));
 
-    svg.append("text")
+    svg.append("text") // adding text labels to x axis
       .attr("class", "x-label")
       .attr("text-anchor", "end")
       .attr("x", width - margin.right)
@@ -46,7 +46,7 @@ d3.csv('long-term-interest-canada.csv').then(data => {
       .attr("dy", "-0.5em") 
       .text("Month");
     
-    svg.append("text")
+    svg.append("text") // adding text labels to y axis
       .attr("class", "y-label")
       .attr("text-anchor", "end")
       .attr("x", -margin.top/2)
@@ -55,10 +55,10 @@ d3.csv('long-term-interest-canada.csv').then(data => {
       .attr("transform", "rotate(-90)")
       .text("Interest rate");
     
-    let line = d3.line()
+    let line = d3.line() //create line to append to chart
         .x(d => x(d.Month))
         .y(d => y(d.Num))
-        .curve(d3.curveNatural); // more: https://observablehq.com/@d3/d3-line#cell-244
+        .curve(d3.curveNatural);
 
     svg.append("path")
         .datum(data)
