@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,600" rel="stylesheet">
+  <title>2015 Police Killings in the US</title>
+  <style>
+     * {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #container {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    #chart { 
+      width: 100%; 
+    }
+
+    text {
+      font-size: 10px;
+    }
+
+    .y-axis path.domain { 
+      display: none;  
+    }
+
+    .y-axis line {
+      stroke: #ddd;
+      stroke-dasharray: 2;
+    }
+
+    .svg-tooltip {
+      background: #fff;
+      border-radius: 5px;
+      display: block;
+      font-size: 12px;
+      line-height: 16px;
+      text-transform: none;
+      max-width: 320px;
+      /* padding: 0.25em; */
+      position: absolute;
+      text-overflow: ellipsis;
+      white-space: pre;
+      z-index: 300;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  </style>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Police Murders in 2015 by Gender</h1>
+        <div id="linechart"></div>
+        <p>
+            This chart shows the count of police murders by gender through the 
+            months of 2015. I used this chart because I believe that it 
+            effectively communicates the disparity in gender in police murders,
+            specifically that men are killed at a much higher count by police.
+            I was also curious if there were any visible trends in murder count,
+            and don't see any that behave the same across gender. We are looking
+            at total murder count by gender aggregated by month. To better understand
+            this dynamic, it would help to have data on encounter count by gender, to 
+            examine if men are murdered at a higher rate per encounter with police,
+            or if it is a similar rate but men are confronted by police at a higher rate.
+        </p>
+    </div>
+
+    <div class="container">
+        <h1>Race in Police Murders</h1>
+        <div id="piechart"></div>
+        <p>
+            This donut chart shows the amount of people murdered 
+            by police each in 2015, grouped by race. This visual helps to demonstrate how race
+            plays a factor in police violence. I am examining count aggregated by race. I chose to use a 
+            pie chart because it effectively demonstrates how large groups are to one another, and what 
+            part of the whole they makeup. Were I to have additional data, I would want racial data on police stops,
+            to understand what the distribution is of stops by race, as well as the crime committed for the person killed,
+            to analyze if that had any interplay with race.
+        </p>
+    </div>
+    <div class="container">
+        <h1>Mental Illness in Police Murders</h1>
+        <div id="stackedchart"></div>
+        <p>
+            This bar graph shows the distribution of amount of people murdered 
+            by police each month that had a mental illness, stacked with people
+            that did not have a mental illness. This visual helps to demonstrate the
+            difference in amount of people that were mentally ill vs not mentally
+            ill, as well as the count of mentally ill individuals killed by the police.
+            These are people that need protecting, not violent reactions. Additional data
+            that would provide context would be what mental illness the individuals had,
+            as well as if they had been treated or were actively on medication at the time.
+        </p>
+    </div>
+</body>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="piechart.js"></script>
+<script src="linechart.js"></script>
+<script src="stacked.js"></script>
+</html>
