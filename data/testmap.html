@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Test Final Graphs</title>
+  <style>
+     * {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #container {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    #chart { 
+      width: 100%; 
+    }
+
+    text {
+      font-size: 10px;
+    }
+
+    .y-axis path.domain { 
+      display: none;  
+    }
+
+    .y-axis line {
+      stroke: #ddd;
+      stroke-dasharray: 2;
+    }
+
+    .svg-tooltip {
+      background: rgba(69, 77, 93, .9);
+      border-radius: 5px;
+      color: #fff;
+      display: block;
+      font-size: 12px;
+      line-height: 16px;
+      text-transform: none;
+      max-width: 320px;
+      padding: 1rem;
+      position: absolute;
+      text-overflow: ellipsis;
+      white-space: pre;
+      z-index: 300;
+      visibility: hidden;
+    }
+  </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Marine Life Movement</h1>
+        <div id="globe"></div>
+        <p>
+            This chart shows the movement of snow crabs over time in the bering sea
+        </p>
+        <p>
+            source = https://apps-afsc.fisheries.noaa.gov/maps/crabmap/crabmap.html
+        </p>
+    </div>
+  
+    <div class="container">
+        <h1>Marine Life Movement</h1>
+        <div id="map"></div>
+        <p>
+            This chart shows the movement of snow crabs over time in the bering sea
+        </p>
+        <p>
+            source = https://apps-afsc.fisheries.noaa.gov/maps/crabmap/crabmap.html
+        </p>
+    </div>
+    <div class="container">
+        <h1>Temp over Time</h1>
+        <div id="linechart"></div>
+        <p>
+        This chart shows temp over time 
+        </p>
+        <p> 
+        source = https://aoos.org/alaska-issues-2/bering-region-ocean-data-sharing-initiative/ 
+        </p>
+    </div>
+    <div class="container">
+        <h1>Median Catch over Time</h1>
+        <div id="linechart_catch_size"></div>
+        <p>
+        This chart shows median catch size over time
+        </p>
+        <p>
+        source = https://apps-afsc.fisheries.noaa.gov/maps/crabmap/crabmap.html
+        </p>
+    </div>
+    <div class="container">
+        <h1>Total Catch over Time</h1>
+        <div id="linechart_total_catch_size"></div>
+        <p>
+        This chart shows total catch over time    
+        </p>
+        <p>
+        source = https://apps-afsc.fisheries.noaa.gov/maps/crabmap/crabmap.html
+        </p>
+    </div>
+    <div class="container">
+        <h1>Sea Level over Time</h1>
+        <div id="sea_level"></div>
+        <p>
+        This chart shows sea level over time   
+        </p>
+        <p> 
+        source = https://aoos.org/alaska-issues-2/bering-region-ocean-data-sharing-initiative/
+        </p>
+    </div>
+<body>
+ 
+</body>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script src="map.js"></script>
+<script src="globe.js"></script>
+<script src="linechart_temp.js"></script>
+<script src="catch_size_by_year.js"></script>
+<script src="total_catch.js"></script>
+<script src="sea_level.js"></script>
+</html>
