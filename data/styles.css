@@ -26,6 +26,35 @@
   svg {
     max-height: 100vh;
   }
+/* Position Sticky Demo */
+.section-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  border: 1px solid black;
+}
+
+.section-container > .chart,
+.section-container > .text-container {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.chart,
+.text-container {
+  padding: 36px;
+}
+
+:has(#alaskamaptest) {
+  /* display: flex; */
+  align-items: flex-start;
+}
+
+#chart1 {
+  width: 90%;
+  position: sticky;
+  top: 0;
+}
 
   .svg-tooltip {
     background: rgba(69, 77, 93, .9);

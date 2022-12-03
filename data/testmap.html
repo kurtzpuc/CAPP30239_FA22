@@ -15,11 +15,12 @@
 
     #container {
       max-width: 1040px;
-      margin: 0 auto;
+      margin: 10 auto;
     }
 
     #chart { 
       width: 100%; 
+      margin: 10 auto
     }
 
     text {
@@ -51,30 +52,91 @@
       z-index: 300;
       visibility: hidden;
     }
+    .slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
   </style>
 </head>
 <body>
+  
+    <body style="background-color:cadetblue;">
     <div class="container">
-        <h1>Marine Life Movement</h1>
+        <h1>Parallel Set</h1>
+        <p>
+          The data is from <a href= "https://aoos.org/alaska-issues-2/bering-region-ocean-data-sharing-initiative">
+            Bering Region Ocean Data Sharing Initiative</a>.
+        </p>
+        <h2>Sea Conditions for Each Year</h2>
+        <div id="parallel"></div>
+      </div>
+    <!-- <div class="container"> -->
+        <!-- <h1 style="color:black"> Marine Life Movement</h1>
         <div id="globe"></div>
         <p>
             This chart shows the movement of snow crabs over time in the bering sea
         </p>
         <p>
             source = https://apps-afsc.fisheries.noaa.gov/maps/crabmap/crabmap.html
-        </p>
+        </p> -->
+        <section class="section-container">
     </div>
-  
     <div class="container">
-        <h1>Marine Life Movement</h1>
-        <div id="map"></div>
-        <p>
-            This chart shows the movement of snow crabs over time in the bering sea
-        </p>
-        <p>
-            source = https://apps-afsc.fisheries.noaa.gov/maps/crabmap/crabmap.html
-        </p>
-    </div>
+      <h1>Alaska Map</h1>
+      <div class="text-container">
+        Write Text Here
+        This chart shows alaska over time   
+        This chart shows alaska over time  
+        This chart shows alaska over time  
+        This chart shows alaska over time  
+        This chart shows alaska over time  
+        This chart shows alaska over time  
+        This chart shows alaska over time  
+        This chart shows alaska over time  
+        This chart shows alaska over time  
+        This chart shows alaska over time  
+        This chart shows alaska over time  
+        This chart shows alaska over time  
+        This chart shows alaska over time  
+        This chart shows alaska over time  
+        This chart shows alaska over time  
+        This chart shows alaska over time  
+        This chart shows alaska over time  
+        This chart shows alaska over time  
+        This chart shows alaska over time  
+  
+        </div>
+      <h2 id="vardatayear" class="year"></h2>
+      <button type="button", id = "colorcode", onclick = "changeSize('5')">Color Coded</button>
+      <button type="button", id = "sizecode", onclick = "changeSize('d => d.CPUE/100000')">Size Coded</button>
+        <div class="slider", id = "myslider">         
+        </div>
+      <div id="alaskamaptest"></div>
+      <p>
+      
+      </p>
+      <p> 
+      source = https://aoos.org/alaska-issues-2/bering-region-ocean-data-sharing-initiative/
+      </p>
+  </div>
+</section>
     <div class="container">
         <h1>Temp over Time</h1>
         <div id="linechart"></div>
@@ -120,10 +182,19 @@
 </body>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script src="https://d3js.org/d3-array.v1.min.js"></script>
+<script src="https://d3js.org/d3-geo.v1.min.js"></script>
+<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 <script src="map.js"></script>
 <script src="globe.js"></script>
 <script src="linechart_temp.js"></script>
 <script src="catch_size_by_year.js"></script>
 <script src="total_catch.js"></script>
 <script src="sea_level.js"></script>
+<script src="alasamaptest.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/d3-color.v1.min.js"></script>
+<script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-sankey/0.12.3/d3-sankey.min.js" integrity="sha512-KK15oKpabNDaLpWinMtNfTqy/V7pzlc2FRG174PfASes7RRx6TAsua8HJdRTKo8+BLvPBKNIkL7kXWcz5HoqqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="parallel.js"></script>
 </html>

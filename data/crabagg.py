@@ -6,12 +6,11 @@ print(df.columns)
 df_crab = df[['LATITUDE', 'LONGITUDE', 'SURVEY_YEAR',
        'COMMON_NAME', 'CPUE']]
 df_crab = df[df["COMMON_NAME"] == "snow crab"]
-df_crab = df_crab[df_crab["SURVEY_YEAR"] == 2012]
+df_crab = df_crab[df_crab["SURVEY_YEAR"] == 2016]
 print(df_crab)
 df_crab = df_crab.groupby(["LATITUDE", "LONGITUDE", "SURVEY_YEAR", "COMMON_NAME"], dropna=True).sum("CPUE").reset_index()
 print(df_crab)
-df_crab.to_csv('crab.csv')
-
+df_crab.to_csv('crab_years/2016.csv')
 
 df_temp = df[['LATITUDE','LONGITUDE','SURVEY_YEAR','BOTTOM_TEMPERATURE', 'SURFACE_TEMPERATURE','CPUE']]
 df_temp = df_temp.groupby(["LATITUDE", "LONGITUDE", "SURVEY_YEAR"], dropna=True).agg({"CPUE": ['median'], "BOTTOM_TEMPERATURE": ['median'], "SURFACE_TEMPERATURE": ['median']}).reset_index()
