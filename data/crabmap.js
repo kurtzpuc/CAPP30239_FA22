@@ -41,7 +41,7 @@
         .attr("fill", "tan")
         .attr("d", path);
 
-    
+       
     var markers = 
         svg
         .selectAll('image')
@@ -71,7 +71,7 @@
             crabslider.attr("value", year);
             d3.select(".crabyear").text(year);
         }
-       
+        
         var crabslider = d3.select(".crabslider")
             .append("input")
             .attr("type", "range")
@@ -119,7 +119,29 @@
               });  
        
         updateYear(2016)
+        var maxRadius = 40
+        var legendX = width - maxRadius - 10
+        var legendY = height - 10
+
+    var legend = svg.append("g")
+        .attr("fill", "#777")
+        .attr("transform", `translate(${legendX},${legendY})`)
+        .attr("text-anchor", "middle")
+        .style("font", "10px sans-serif")
+        .selectAll("g")
+        .data(radius.ticks(4).slice(1))
+        .join("g");
   
+    legend.selectAll('image')
+    .join("image")
+    .attr('width',  20)
+    .attr('height',  20)
+    .attr('href', 'My project-1 (4).png')
+    legend.append("text")
+        .attr("y", d => -2 * radius(d))
+        .attr("dy", "1.3em")
+        .text(radius.tickFormat(4, "s"));
+      
  
     });
     
