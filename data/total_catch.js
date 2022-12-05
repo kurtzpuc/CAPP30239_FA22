@@ -74,7 +74,6 @@
         
       svg.selectAll("myCircles")
         .data(data)
-        .enter()
         .append("circle")
           .attr("fill", "black")
           .attr("stroke", "none")
