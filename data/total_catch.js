@@ -1,4 +1,4 @@
-/* D3 Line Chart with Bisect Tooltip */
+/* D3 Line Chart */
 (function symbol(){
     let height = 300,
       width = 800,
@@ -14,7 +14,6 @@
             d.BOTTOM_TEMPERATURE = +d.BOTTOM_TEMPERATURE; //force a number
             d.CPUE = +d.CPUE; //force a number
         };
-      console.log(data)
     
       let x = d3.scaleBand()
         .domain(data.map((d) => d.SURVEY_YEAR))
@@ -27,6 +26,7 @@
       svg.append("g")
         .attr("transform", `translate(${margin.left},0)`)
         .attr("class", "y-axis")
+        .style("font", "7px times")
         .call(d3.axisLeft(y)
         .tickSize(-width + margin.right + margin.left)
         );
@@ -51,10 +51,12 @@
         .attr("class", "y-label")
         .attr("text-anchor", "end")
         .attr("x", -margin.top / 2)
-        .attr("dx", "-0.5em")
+        .attr("dx", "-0.1em")
         .attr("y", 10)
+        .style("font", "14px times")
         .attr("transform", "rotate(-90)")
         .text("Catch Size");
+   
     
     
     
@@ -80,26 +82,27 @@
           .attr("cy", function(d) { return y(d.CPUE) })
           .attr("r", 3)
     
-      const tooltip = d3.select("body").append("div")
+      const tooltipcatch = d3.select("body").append("div")
         .attr("class", "svg-tooltip")
+        .attr('id', 'catch')
         .style("position", "absolute")
         .style("visibility", "hidden");
     
-      d3.selectAll("circle")
+      svg.selectAll("circle")
         .on("mouseover", function(event, d) {
           d3.select(this).attr("fill", "red");
-          tooltip
+          tooltipcatch
             .style("visibility", "visible")
-            .html(`Year: ${d.SURVEY_YEAR}<br />Median Catch: ${d.CPUE}`);
+            .html(`Year: ${d.SURVEY_YEAR}<br />Total Catch: ${d.CPUE}`);
         })
         .on("mousemove", function(event) {
-          tooltip
+          tooltipcatch
             .style("top", (event.pageY - 10) + "px")
             .style("left", (event.pageX + 10) + "px");
         })
         .on("mouseout", function() {
           d3.select(this).attr("fill", "black");
-          tooltip.style("visibility", "hidden");
+          tooltipcatch.style("visibility", "hidden");
         })
     
     });

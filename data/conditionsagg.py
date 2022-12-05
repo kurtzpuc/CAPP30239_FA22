@@ -33,6 +33,7 @@ catch = pd.read_csv("crab.csv")
 acidity = pd.read_csv("ocean-acidity_fig-1.csv")
 temps = pd.read_csv("temps_by_year.csv")
 depth = pd.read_csv("marine-species_fig-1.csv")
+sea_level = pd.read_csv("sea-level_fig-1.csv")
 
 catch = catch.groupby(["SURVEY_YEAR"], dropna=True).sum("CPUE").reset_index()
 catch.rename(columns = {'SURVEY_YEAR':'Year', "Unnamed: 0": 'CPUE'}, inplace = True)
@@ -48,8 +49,17 @@ temps.rename(columns = {'SURVEY_YEAR':'Year'}, inplace = True)
 
 depth = depth[["Year", "Eastern Bering Sea - Latitude","Eastern Bering Sea - Depth"]]
 depth = depth.dropna()
-data_frames = [catch, acidity, temps, depth]
+
+sea_level = sea_level[["Year", "NOAA - Adjusted sea level (inches)"]]
+sea_level = sea_level.dropna()
+sea_level.rename(columns = {'NOAA - Adjusted sea level (inches)':'Sea_Level'}, inplace = True)
+
+
+data_frames = [catch, acidity, temps, depth, sea_level]
+
+
 df_merged = reduce(lambda  left,right: pd.merge(left,right,on=['Year'],
                                             how='outer'), data_frames)
 print(df_merged.columns)
+df_merged = df_merged.dropna()
 df_merged.to_csv('conditions.csv')

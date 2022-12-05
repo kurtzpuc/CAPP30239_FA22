@@ -8,177 +8,198 @@
   <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <title>Test Final Graphs</title>
-  <style>
-     * {
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    #container {
-      max-width: 1040px;
-      margin: 10 auto;
-    }
-
-    #chart { 
-      width: 100%; 
-      margin: 10 auto
-    }
-
-    text {
-      font-size: 10px;
-    }
-
-    .y-axis path.domain { 
-      display: none;  
-    }
-
-    .y-axis line {
-      stroke: #ddd;
-      stroke-dasharray: 2;
-    }
-
-    .svg-tooltip {
-      background: rgba(69, 77, 93, .9);
-      border-radius: 5px;
-      color: #fff;
-      display: block;
-      font-size: 12px;
-      line-height: 16px;
-      text-transform: none;
-      max-width: 320px;
-      padding: 1rem;
-      position: absolute;
-      text-overflow: ellipsis;
-      white-space: pre;
-      z-index: 300;
-      visibility: hidden;
-    }
-    .slidecontainer {
-  width: 100%; /* Width of the outside container */
-}
-
-/* The slider itself */
-.slider {
-  -webkit-appearance: none;  /* Override default CSS styles */
-  appearance: none;
-  width: 100%; /* Full-width */
-  height: 25px; /* Specified height */
-  background: #d3d3d3; /* Grey background */
-  outline: none; /* Remove outline */
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-  transition: opacity .2s;
-}
-
-/* Mouse-over effects */
-.slider:hover {
-  opacity: 1; /* Fully shown on mouse-over */
-}
-  </style>
 </head>
 <body>
-  
-    <body style="background-color:cadetblue;">
-    <div class="container">
-        <h1>Parallel Set</h1>
-        <p>
-          The data is from <a href= "https://aoos.org/alaska-issues-2/bering-region-ocean-data-sharing-initiative">
-            Bering Region Ocean Data Sharing Initiative</a>.
-        </p>
-        <h2>Sea Conditions for Each Year</h2>
-        <div id="parallel"></div>
+
+      <main>
+        <section id="intro">
+          <div style="text-align: center;">
+            <h1>State of the Snow Crabs:</h1>
+            <h2>Why We’ve Lost 90% in Three Years</h2>
+            <h3>Data from <a href="https://aoos.org/alaska-issues-2/bering-region-ocean-data-sharing-initiative">Bering Region Ocean Data Initative</a>, 
+              <a href="https://apps-afsc.fisheries.noaa.gov/maps/crabmap/crabmap.html">NOAA</a>,
+              <a href="https://www.epa.gov/climate-indicators/climate-change-indicators-ocean-acidity">EPA</a>
+              and  <a href="https://www.adfg.alaska.gov/index.cfm?adfg=maps.data">Alaska Fish and Game</a></h3>
+          </div>
+          </section>
+          <section class="section-container">
+            <div class="text-container">
+              <p>
+                <div class="author-date-container">
+                  <span class="author">Piper Kurtz</span>
+                </div>
+               <h3> The Snow Crab Population Disaster: The Factors at Play </h3>
+              <p>
+                In just three short years, the snow crab population has taken a drastic turn for the worse. Scientists estimate that 90 percent of these crabs have been lost due to the effects of climate change. This is an alarming statistic, as these crabs are a vital part of the seafood industry in Alaska, providing both indigenous communities a way of life, and serving as a pillar of the statewide economy. </p> 
+                <p> 
+                  Currently, marine biologists are somewhat baffled by this sudden drop. Conducting research on marine life in the Bering Sea is difficult, and as such is often under researched. What we do know is that in the past twenty years, we have seen several environmental changes in the Bering Sea, including increased CO2 levels in the water, overfishing, rising ocean temperatures, bottom trawling, and rising sea levels. This parallel chart to the right illustrates how over the past twenty years, these ocean conditions, as well as total crab harvest and depth that crabs are found at, has changed.
+                </p>
+                <p> 
+                  Higher C02 levels in the water reduce the oxygen content, making it difficult for snow crabs to survive. Additionally, higher C02 levels also make it difficult for them to reproduce. Snow crabs require specific conditions to survive, and these changes, combined with rising temperatures, creates a rapidly deteriorating environment. Bottom trawling is a notoriously destructive fishing practice, which involves dragging a net along the ocean floor, disrupting and destroying habitats. Destruction of habitat, combined with these changes in environmental conditions, have not yet been officially identified as the cause for this sudden mass (near) extinction of the snow crabs. However, it cannot be helping.
+                </p>
+          
+            </div>
+        
+        <div class = "chart" id="parallel">
+        <h1>Sea Conditions by Year</h1>
+        <h3>
+          Data sources are <a href= "https://aoos.org/alaska-issues-2/bering-region-ocean-data-sharing-initiative">
+            Bering Region Ocean Data Sharing Initiative</a>, <a href="https://apps-afsc.fisheries.noaa.gov/maps/crabmap/crabmap.html">NOAA</a>,    
+             <a href="https://www.epa.gov/climate-indicators/climate-change-indicators-ocean-acidity">EPA </a>,
+            and <a href="https://www.adfg.alaska.gov/index.cfm?adfg=maps.data">Alaska Fish and Game</a>.
+          </h3>
       </div>
-    <!-- <div class="container"> -->
-        <!-- <h1 style="color:black"> Marine Life Movement</h1>
-        <div id="globe"></div>
-        <p>
-            This chart shows the movement of snow crabs over time in the bering sea
-        </p>
-        <p>
-            source = https://apps-afsc.fisheries.noaa.gov/maps/crabmap/crabmap.html
-        </p> -->
-        <section class="section-container">
-    </div>
-    <div class="container">
-      <h1>Alaska Map</h1>
+    </section>
+
+
+    <section class="section-container">
       <div class="text-container">
-        Write Text Here
-        This chart shows alaska over time   
-        This chart shows alaska over time  
-        This chart shows alaska over time  
-        This chart shows alaska over time  
-        This chart shows alaska over time  
-        This chart shows alaska over time  
-        This chart shows alaska over time  
-        This chart shows alaska over time  
-        This chart shows alaska over time  
-        This chart shows alaska over time  
-        This chart shows alaska over time  
-        This chart shows alaska over time  
-        This chart shows alaska over time  
-        This chart shows alaska over time  
-        This chart shows alaska over time  
-        This chart shows alaska over time  
-        This chart shows alaska over time  
-        This chart shows alaska over time  
-        This chart shows alaska over time  
-  
-        </div>
-      <h2 id="vardatayear" class="year"></h2>
-      <button type="button", id = "colorcode", onclick = "changeSize('5')">Color Coded</button>
-      <button type="button", id = "sizecode", onclick = "changeSize('d => d.CPUE/100000')">Size Coded</button>
+        <h3> 
+          Why Warming Waters Hurt Crabs
+        </h3>
+        <p> 
+          Most scientists believe the primary cause to be rising ocean temperatures. Snow crabs require cold water to flourish and grow in their juvenile years, as do many marine species in Alaska. Snow crabs typically reside on the ocean floor, where they can burrow if attacked by predators. Looking at the graphic to the right, we can see that the temperature on the bottom of the ocean in crab fishing locations has steadily risen over time, in conjunction with rising surface temperatures. This is despite the fact that crabs have been migrating north to colder waters; these waters are still warmer than their traditional habitats have been.
+        </p>
+        <p> 
+          Warmer waters also mean less cold pools. Snow crabs rely on cold pockets of water under sea ice to hide from predators, and the warming waters meant that these pockets became smaller, and more rare. Either crabs were unable to find colder water, and perished, or were forced to gather in higher density. It has been shown time and time again that when marine life is pushed into high density areas, such as fish farms, disease runs rampant. Some scientists hypothesize that the combination of less cold pools, disease within the remaining high density cold pools, and starvation could all be possible factors that led to the sudden near extinction of snow crabs.
+        </p>
+          
+      </div>
+      <div>
+        <div class="chart" id="linechart">
+      <h1>Temperature over Time</h1>
+      <h3>
+        Data source is <a href= "https://aoos.org/alaska-issues-2/bering-region-ocean-data-sharing-initiative">
+          Bering Region Ocean Data Sharing Initiative</a>.
+      </h3>
+    </div>
+  </div>
+      </section>
+    
+
+
+        <section class="section-container">
+          <div class="text-container">
+            <h3> Snow Crabs by the Numbers </h3>
+            <p> 
+              For the first time in Alaska's history, the $160 million annual snow crab industry has been closed for the season. This came as the result of news that in the past 3 years, from 2019 to 2022, the population has plummeted from 11.7 billion in 2018 to 1.9 billion. Such a sharp decline in such a short span of time is clearly cause for alarm.
+            </p>
+            <p> 
+              Warmer oceans create an environment that is hostile to snow crabs, causing them to migrate farther north in search of cooler waters. Looking to the figure to the right, if you move the slider, you can that as time has passed, the location of crabs (and thus crab fishing) have slowly migrated north. As crabs have gone further from shore, this has also required that fisherman move further out to sea in search of their harvest. In what is already one of the most dangerous professions in the world with a mortality rate 75 times higher than the average, moving further into the dangerous waters of the Arctic Circle is not something to be taken lightly; many fishermen have been forced to retire, as they cannot brave the harsh waters.
+            </p>
+           
+            </div>
+    <div id="alaskamaptest" class="chart">
+      <h1>Crab Harvest by Fishing Location </h1>
+      <h3>
+        Data source is <a href="https://apps-afsc.fisheries.noaa.gov/maps/crabmap/crabmap.html">NOAA</a>.
+        </h3>
+      <h3 id="vardatayear" class="year"></h3>
         <div class="slider", id = "myslider">         
         </div>
-      <div id="alaskamaptest"></div>
       <p>
       
       </p>
-      <p> 
-      source = https://aoos.org/alaska-issues-2/bering-region-ocean-data-sharing-initiative/
-      </p>
   </div>
 </section>
-    <div class="container">
-        <h1>Temp over Time</h1>
-        <div id="linechart"></div>
-        <p>
-        This chart shows temp over time 
-        </p>
-        <p> 
-        source = https://aoos.org/alaska-issues-2/bering-region-ocean-data-sharing-initiative/ 
-        </p>
-    </div>
-    <div class="container">
-        <h1>Median Catch over Time</h1>
+
+
+<section class="section-container">
+  <div class="text-container">
+  <h3> 
+    Snow Crabs Beyond the Numbers
+  </h3>
+  <p>
+  The figure to the right once again illustrates how the crab harvest has migrated over time, but this time using cute little crabs. The impact of this migration is not as cute. Indigenous communities in Alaska have relied on the snow crab population as a way of life for generations. Many communities now face food scarcity, communities that have already suffered at the hand of climate change and globalization in the form of thawing permafrost, melting icecaps/glaciers, and mass extinction of many traditional food sources. For so many, fishing is more than a livelihood, it is a way of life. A way that has now been taken away.
+  </p>
+  <p>
+  In indigenous communities, crabs provide income, a food source, and a connection to heritage. The destruction of these things has further endangered and marginalized communities that are still recovering from the pandemic, communities which were forced to shut down to prevent risk of disease spreading in remote regions with no access to hospital beds.  
+</p>
+<p>
+  Resources in the United States have historically been managed for profit and extractive enterprise. Alaska Snow Crab were one of the few resources that were preserved; in Alaska, every indigenous Alaskan has subsistence fishing rights without need for a permit. This only applies, however, if there are fish to catch. The migration of crabs has left many communities without solutions, as some fishermen do not have the resources and equipment necessary to follow the crabs north into more dangerous, wild waters. The issue of snow crab extinction is not just one of economic disaster, but of socioeconomic and racial disaster as well.
+</p>
+</div>
+<div id="crabmap" class="chart">
+<h1>Crab Harvest by Fishing Location</h1>
+<h3>(but with cute crabs)</h3>
+<h3>
+  Data source is <a href="https://apps-afsc.fisheries.noaa.gov/maps/crabmap/crabmap.html">NOAA</a>.
+  </h3>
+<h3 id="crabdatayear" class="crabyear"></h3>
+<div class="crabslider", id = "crabslider">         
+</section>
+<section class="section-container">
+  <div class="text-container">
+  <h3>What Fishermen Have Seen</h3>
+  <p>
+    "'I just remember being out on the boat and knowing that something was wrong,' Fedewa said. In locations researchers would typically find several thousand snow crabs, they were pulling in only a couple of hundred." This excerpt from Conservation.org is indicative of what the first graph on the right shows, that catch size has been decreasing over the past 20 years. As crabs have been forced to migrate towards warmer waters, fishermen have seen less crabs in their net everytime they pull it up. 
+  </p>
+  <p>
+    The dip in median catch size has been partially obscured by the semi-consistent total catch. Median catch size is how many crabs are in the net everytime it is pulled out of the water, whereas total catch is the amount of crab harvested collectively over the entire season. Marine wildlife naturally operates in cycles, as do the harvest of them - the rises and falls of the graph of total catch are something you would expect to see for most fishing industries. However, when we consider this alongside the drop in median catch size, a very different story is painted. When total catch stays consistent, but median catch size is down, this means that fishermen are having to fish harder, longer, and more aggressively. This leads to more dangerous work environments, and more importantly, is indicative of overfishing.
+  </p>
+</div>
+
+       <div id="catch_charts_container" class="chart">
+        <h3>Median Catch Size over Time</h3>
         <div id="linechart_catch_size"></div>
-        <p>
-        This chart shows median catch size over time
-        </p>
-        <p>
-        source = https://apps-afsc.fisheries.noaa.gov/maps/crabmap/crabmap.html
-        </p>
+        <h3>Total Catch Size over Time</h3>
+    <div id="linechart_total_catch_size"></div>
+  
+    <h3>
+      Data source is <a href= "https://aoos.org/alaska-issues-2/bering-region-ocean-data-sharing-initiative">
+        Bering Region Ocean Data Sharing Initiative</a>.
+        </div>
+  </div>
+</section>
+<div class="text-container">
+  <h3> Going Forward </h3>
+  <p> 
+  The sudden culmination of the impact of climate change combined with a lack of awareness surrounding the snow crab population has led to an incredible collapse, the likes of which has not been seen in the Alaskan fishing industry. What is there to do? Are an industry, way of life, and entire species doomed for extinction? If we continue forward as we have been, the answer is most likely yes. However, there is reason for hope. Alaska has officially closed the snow crab fishery for this season, a devastating but necessary step. The hope in closing the fishery is that by allowing the crabs a season to breed, we may see a spike in juvenile population that will later pay dividends in a once again stable crab population. This is not a sure bet. The factors that led to this drop, increased CO2 levels in the water, rising ocean temperatures, melting ice caps, they all remain and pose a threat to crabs. 
+</p>
+<p> 
+  In order to preserve Alaskan economy and way of life, the state and nation need to take proactive steps to create sustainable fishing practices and sources in the Bering Sea. One possible alternative would be aquaculture, specifically kelp farming. We have already seen kelp farms transform the fishing landscape in Maine, where lobster fishermen faced peril as lobsters migrated north. This practice was imported from Japan, where kelp farming has been a staple of fishermen for decades. Japanese kelp is a cold water crop that is dependable and more consistent that traditional fishing. Although aquaculture is a foreign concept to many, consider the difference between aquaculture and commercial fishing the same as you would between farming and hunting. When humans made the shift to traditional agriculture, it forever changed our societies and our ability to feed our communities. By introducing aquaculture to Alaskan fishermen, the aim would be to facilitate a similar paradigm shift in how we view sustainable fishing.
+</p>
+<p> 
+  Transitioning the Alaskan fishing industry to aquaculture would allow for fishermen to utilize the tools and skills they already have in new ways, preserving jobs and bolstering a key pillar of the state's economy. It would allow for the crab population to regenerate in peace, and for indigenous peoples to continue their fishing practices without worry of adding to a dangerous overfishing problem, as well as provide an additional source of income for coastal communities. Not only that, but investment in aquaculture, specifically kelp, would combat the effects of climate change that created this very issue. Researchers at Harvard have found that coastal climate systems with macroalgea like kelp can reduce carbon by up to 20 times as much as a land forest. The potential environmental impact that would accompany an investment in aquaculture could be huge, and further assist in enabling the snow crab population to replenish. An investment now would pay dividends for decades to come, helping to preserve an economy, a people, and a way of life.
+  </p>
+
+  <h3> Process </h3>
+  <p> 
+    I chose this topic as my final project because it is an issue that is dear to me and my community. My grandfather and great-uncle were some of the first commercial crab fishermen in Alaska, fishing aboard the Amatuli and helping to build the industry into what it is today. My great-uncle specifically was key in preserving fishing rights, serving as an advisor on the board of the North Pacific Fishery Management Council and fighting to maintain and prioritize indigenous fishing rights as the commercial industry developed. I grew up hearing stories of crab fishing, and eventually became a commercial fisherman myself, fishing for red and king salmon in Bristol Bay at the largest salmon run in the world. I originally was going to conduct this project on salmon and changes in that population, but the data was much harder to collect and in light of the fishery for snow crab being closed for the first time ever, thought this was a more pressing story/issue.
+  </p>
+  <p> 
+  I chose these data sources because they are reliable sources, coming from NOAA, the Bering Region Ocean Data Sharing Initiative, EPA, and Alaska Fish and Game, all government or nonprofit agencies that are focused around data collection and authentication for the environment. These data sets are very thorough, although they only overlapped between 1996 and 2018, which was specifically frustrating because with no data that was complete or usable post 2018, I was unable to include visualizations illustrating the drop in population itself. However, as the drop happened in the few years following 2018, I decided this was still usable data, as I wanted to tell a story on the factors that led to the drop, not just the drop itself. I also utilized data for CO2 in water that was collected in a region of the Pacific near Hawai'i, not Alaska. However, I decided to include the information anyways, as it is indicative of the general trends in increased levels of CO2 in water around the world, and was not a driving factor in the story, but was an auxiliary dataset. Were we to drop this dataset, it would not impact the story's validity, but it is worth noting that it was not collected near the region crabs inhabit. 
+  </p>
+  <p> 
+    I initially defined my story as one of communication of the parties impacted. I wanted to bring light to an issue that not many people outside of Alaska are aware of and describe what happened and how it impacts different communities in Alaska. However, as I developed this story it felt wrong to not provide some context on what could be done, partially because I'm an optimist at heart, and because I believe that policy initiatives can be the solution we need. I made some value statements on what would be helpful to combat climate change in Alaska, but do not in any way claim my ideas to be exhaustive or the right solution. Merely, I was trying to bring light to an issue, and propose one partial solution, that would fit into a much larger plan.
+    </p>
+    <p> 
+     I chose to utilize a parallel chart when speaking on a variety of ocean conditions because I thought that it would be a valuable way to show the relationship between many different variables, while also showing what happened in specific trends over time. By color coding the lines by year, the viewer is able to identify any trends over time that show for specific variables, as well as relationships between different variables, such as ocean temperature and CO2 levels. For all my color scales, I chose to use a blue to red scale both because it is a traditional heat map color coding that people instinctively recognize, as well as it being an accessible color scale. 
+     I chose to use several line charts to communicate trends overtime in catch and temperature because they are clear, simple, and easy to comprehend. Line graphs are what most of us were introduced to, so for the sake of ease of access, I thought they would be best. I used filled line graphs because I felt that they better indicated the drops in certain years.
+     I chose to use bubble maps (coded by color and size) because for people to understand how crabs have moved over time, I thought the visual aid of a map was the best way to show them. I used crabs as markers because it immediately communicates what the image is on and is intuitive to the viewer, as well as makes the subject less academic and more relatable by including cartoon crabs. I also just really enjoyed putting little cartoon crabs on a map.
+     I found that coding the styles section, and getting tooltips and legends to behave properly across visualizations, to be especially difficult. Sandy was a huge help in this process, and was an exemplary TA for this course.
+      </p>
+  </p>
+      <h3> Sources </h3>
+      <p> 
+        <a href="https://www.conservation.org/blog/news-spotlight-what-happened-to-alaska-s-snow-crabs-scientists-have-a-few-leads#:~:text=In%20locations%20researchers%20would%20typically,to%201.9%20billion%20in%202022."> Conservation.org</a>
+        <a href="https://www.seattletimes.com/opinion/a-new-era-of-indigenous-comanagement-of-the-bering-sea/"> Seattle Times</a>
+        <a href="https://uaf.edu/tribal/academics/112/unit-3/tribalhuntingandfishingrightssubsistenceanilca1980.php#:~:text=In%201971%20Congress%20extinguished%20aboriginal,not%20part%20of%20the%20settlement."> University of Alaska Fairbanks</a>
+        <a href="https://www.fisheries.noaa.gov/species/alaska-snow-crab">NOAA Species Information</a>
+        <a href="https://www.epa.gov/climate-indicators/climate-change-indicators-ocean-acidity">EPA Ocean Data</a>
+        <a href="https://news.mongabay.com/2022/11/did-climate-change-really-kill-billions-of-snow-crabs-in-alaska/#:~:text=Warmer%20temperatures%20are%20thought%20to,the%20species%20to%20take%20shelter.">Mongabay</a>
+        <a href="https://www.fisheries.noaa.gov/feature-story/snow-crab-warming-waters">NOAA Article</a>
+        <a href="https://aoos.org/alaska-issues-2/bering-region-ocean-data-sharing-initiative">Bering Region Ocean Data Sharing Initiative</a>
+        <a href="https://apps-afsc.fisheries.noaa.gov/maps/crabmap/crabmap.html">NOAA Data</a>
+        <a href="https://www.adfg.alaska.gov/index.cfm?adfg=maps.data">Alaska Fish and Game Data</a>
+        <a href="https://thefishsite.com/articles/cultured-aquatic-species-japanese-kelp"> History of Kelp Farming</a>
+        <a href="https://time.com/5848994/seaweed-climate-change-solution/"> Time Magazine on the Environmental Impact of Kelp</a>
+        <a href="https://sitn.hms.harvard.edu/flash/2019/how-kelp-naturally-combats-global-climate-change/#:~:text=Coastal%20ecosystems%20sequester%20away%20surprisingly,seagrass%2C%20live%20in%20rich%20soil."> Harvard Study on the Environmental Impact of Kelp</a>
+      </p>
     </div>
-    <div class="container">
-        <h1>Total Catch over Time</h1>
-        <div id="linechart_total_catch_size"></div>
-        <p>
-        This chart shows total catch over time    
-        </p>
-        <p>
-        source = https://apps-afsc.fisheries.noaa.gov/maps/crabmap/crabmap.html
-        </p>
-    </div>
-    <div class="container">
-        <h1>Sea Level over Time</h1>
-        <div id="sea_level"></div>
-        <p>
-        This chart shows sea level over time   
-        </p>
-        <p> 
-        source = https://aoos.org/alaska-issues-2/bering-region-ocean-data-sharing-initiative/
-        </p>
-    </div>
-<body>
- 
+     
+    
+
 </body>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
@@ -197,4 +218,7 @@
 <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-sankey/0.12.3/d3-sankey.min.js" integrity="sha512-KK15oKpabNDaLpWinMtNfTqy/V7pzlc2FRG174PfASes7RRx6TAsua8HJdRTKo8+BLvPBKNIkL7kXWcz5HoqqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="parallel.js"></script>
+<script src="cluster.js"></script>
+<script src="crabmap.js"></script>
+<script src="legend.js"></script>
 </html>

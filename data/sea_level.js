@@ -7,7 +7,7 @@ d3.csv("sea_level.csv").then(data => {
     };
 
     const height = 600,
-          width = 800,
+          width = 1000,
           margin = ({ top: 25, right: 30, bottom: 35, left: 50 });
 
     let svg = d3.select("#sea_level")
@@ -50,6 +50,7 @@ d3.csv("sea_level.csv").then(data => {
         .attr('x', d => x(d.Year) + (x.bandwidth()/2))
         .attr('y', d => y(d.sea_level) + 25) //set label position
         .attr('text-anchor', 'middle')
+        .attr('font-size', 12)
         .style('fill', 'white');
 
 });

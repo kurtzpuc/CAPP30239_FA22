@@ -1,4 +1,4 @@
-/* D3 Line Chart with Bisect Tooltip */
+/* D3 Line Chart */
 (function symbol(){
     let height = 300,
       width = 800,
@@ -50,9 +50,9 @@
       svg.append("text")
         .attr("class", "y-label")
         .attr("text-anchor", "end")
-        .attr("x", -margin.top / 2)
+        .attr("x", -10)
         .attr("dx", "-0.5em")
-        .attr("y", 10)
+        .attr("y", 20)
         .attr("transform", "rotate(-90)")
         .text("Catch Size");
     
@@ -80,26 +80,27 @@
           .attr("cy", function(d) { return y(d.CPUE) })
           .attr("r", 3)
     
-      const tooltip = d3.select("body").append("div")
+      const tooltipcatch = d3.select("body").append("div")
         .attr("class", "svg-tooltip")
+        .attr('id', 'catch')
         .style("position", "absolute")
         .style("visibility", "hidden");
     
-      d3.selectAll("circle")
+      svg.selectAll("circle")
         .on("mouseover", function(event, d) {
           d3.select(this).attr("fill", "red");
-          tooltip
+          tooltipcatch
             .style("visibility", "visible")
             .html(`Year: ${d.SURVEY_YEAR}<br />Median Catch: ${d.CPUE}`);
         })
         .on("mousemove", function(event) {
-          tooltip
+          tooltipcatch
             .style("top", (event.pageY - 10) + "px")
             .style("left", (event.pageX + 10) + "px");
         })
         .on("mouseout", function() {
           d3.select(this).attr("fill", "black");
-          tooltip.style("visibility", "hidden");
+          tooltipcatch.style("visibility", "hidden");
         })
     
     });

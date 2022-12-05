@@ -2,7 +2,7 @@
 (function symbol(){
     let height = 300,
       width = 800,
-      margin = ({ top: 15, right: 30, bottom: 45, left: 50 });
+      margin = ({ top: 15, right: 100, bottom: 45, left: 50 });
     
     const svg = d3.select("#linechart")
       .append("svg")
@@ -13,8 +13,7 @@
             d.SURFACE_TEMPERATURE = +d.SURFACE_TEMPERATURE; //force a number
             d.BOTTOM_TEMPERATURE = +d.BOTTOM_TEMPERATURE; //force a number
         };
-      console.log(data)
-    
+        
       let x = d3.scaleBand()
         .domain(data.map((d) => d.SURVEY_YEAR))
         .range([margin.left, width - margin.right]);
@@ -51,7 +50,7 @@
         .attr("text-anchor", "end")
         .attr("x", -margin.top / 2)
         .attr("dx", "-0.5em")
-        .attr("y", 10)
+        .attr("y", 30)
         .attr("transform", "rotate(-90)")
         .text("Temperature");
     
@@ -82,7 +81,7 @@
         .attr("fill", "lightblue")
         .attr("stroke", "steelblue")
         
-      svg.selectAll("myCircles")
+      svg.selectAll("tempCircles")
         .data(data)
         .enter()
         .append("circle")
@@ -92,7 +91,7 @@
           .attr("cy", function(d) { return y(d.BOTTOM_TEMPERATURE) })
           .attr("r", 3)
         
-      svg.selectAll("myCircles")
+      svg.selectAll("tempCircles")
         .data(data)
         .enter()
         .append("circle")
@@ -101,27 +100,77 @@
             .attr("cx", function(d) { return x(d.SURVEY_YEAR) })
             .attr("cy", function(d) { return y(d.SURFACE_TEMPERATURE) })
             .attr("r", 3)
+        
+      svg.append("text")
+            .attr("class", "x-label")
+            .attr("text-anchor", "end")
+            .attr("x", width - margin.right)
+            .attr("y", height)
+            .attr("dx", "0.5em")
+            .attr("dy", "-0.5em")
+            .text("Year");
+        
+        var legend = svg.selectAll('.line')
+            .data(data)
+            .enter().append('g')
+            .attr('class', 'legend');
+      
+        
+        legend.append('rect')
+            .attr('x', width - 90)
+            .attr('y', height/4)
+            .attr('width', 10)
+            .attr('height', 10)
+            .attr('fill', 'lightblue')
+        
+        legend.append('text')
+            .attr('x', width - 78)
+            .attr('y', height/4 + 10)
+            .text("Bottom") 
+        legend.append('text')
+            .attr('x', width - 78)
+            .attr('y', height/3 + 5)
+            .text("Temp");
+
+
+        legend.append('rect')
+            .attr('x', width - 90)
+            .attr('y', height/10)
+            .attr('width', 10)
+            .attr('height', 10)
+            .attr('fill', 'lightred')
+        
+        legend.append('text')
+            .attr('x', width - 78)
+            .attr('y', height/7)
+            .text("Surface") 
+        legend.append('text')
+            .attr('x', width - 78)
+            .attr('y', height/5)
+            .text("Temp");
+        
     
-      const tooltip = d3.select("body").append("div")
+      const tooltiptemp = d3.select("body").append("div")
         .attr("class", "svg-tooltip")
+        .attr("id", 'temp')
         .style("position", "absolute")
         .style("visibility", "hidden");
     
-      d3.selectAll("circle")
+      svg.selectAll("circle")
         .on("mouseover", function(event, d) {
           d3.select(this).attr("fill", "red");
-          tooltip
+          tooltiptemp
             .style("visibility", "visible")
             .html(`Year: ${d.SURVEY_YEAR}<br />Surface Temp: ${d.SURFACE_TEMPERATURE}<br />Bottom Temp: ${d.BOTTOM_TEMPERATURE}`);
         })
         .on("mousemove", function(event) {
-          tooltip
+          tooltiptemp
             .style("top", (event.pageY - 10) + "px")
             .style("left", (event.pageX + 10) + "px");
         })
         .on("mouseout", function() {
           d3.select(this).attr("fill", "black");
-          tooltip.style("visibility", "hidden");
+          tooltiptemp.style("visibility", "hidden");
         })
     
     });
